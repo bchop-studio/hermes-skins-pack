@@ -1,5 +1,7 @@
 # Hermes Skins Pack — 50 Subscriber Themes
 
+![Hero](hero.png)
+
 A curated pack of **50 unique, drop-in skin themes** for the [Hermes Agent](https://github.com/NousResearch/hermes-agent) CLI and TUI. Every skin is a complete YAML file using the real Hermes color keys — no inherited defaults, no silent fallbacks.
 
 ## What's Inside
