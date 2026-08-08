@@ -598,8 +598,9 @@ Every skin defines a complete palette, including syntax colors and `shell_dollar
 
 MIT. See [`LICENSE`](LICENSE).
 
-Made by [@BChopLXXXII](https://github.com/BChopLXXXII).
+Made by [bchop-studio](https://github.com/bchop-studio)
 
 Built for vibe coders who want their AI to feel less corporate.
 
 If this helped, ⭐ the repository so others can find it.
+
