@@ -210,7 +210,7 @@ Expected output will resemble:
 ### Step 4: Set a Different Skin for Each Profile
 
 ```bash
-hermes config set display.skin midnight-studio
+hermes -p default config set display.skin midnight-studio
 hermes -p culinary config set display.skin warm-parchment
 hermes -p it_guy config set display.skin netrunner
 hermes -p personal config set display.skin aurora-boreal
@@ -278,7 +278,7 @@ hermes profile alias travel
 If your installed Hermes release supports a custom alias name, use:
 
 ```bash
-hermes profile alias PROFILE_NAME ALIAS_NAME
+hermes profile alias PROFILE_NAME --name ALIAS_NAME
 ```
 
 Check the command syntax available in your installed version with:
@@ -336,7 +336,7 @@ Use `config get` for each profile:
 
 ```bash
 printf 'default:   '
-hermes config get display.skin
+hermes -p default config get display.skin
 
 printf 'culinary: '
 hermes -p culinary config get display.skin
@@ -395,7 +395,7 @@ test -f "$skin_file" \
 Start each profile in a separate new CLI session:
 
 ```bash
-hermes chat
+hermes -p default chat
 hermes -p culinary chat
 hermes -p it_guy chat
 hermes -p personal chat
@@ -440,7 +440,7 @@ Default profile:
 ```bash
 mkdir -p "$HOME/.hermes/skins"
 cp skins/neon-ghost.yaml "$HOME/.hermes/skins/"
-hermes config set display.skin neon-ghost
+hermes -p default config set display.skin neon-ghost
 ```
 
 Named profile:
@@ -500,7 +500,7 @@ ls -1 "$HOME/.hermes/profiles/PROFILE_NAME/skins"
 For the default profile:
 
 ```bash
-hermes config get display.skin
+hermes -p default config get display.skin
 ls -1 "$HOME/.hermes/skins"
 ```
 
