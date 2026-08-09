@@ -5,7 +5,7 @@ Stdlib-only. Verifies:
   1. exactly 100 YAML files under skins/
   2. unique filenames and unique top-level `name` values, name == filename stem
   3. every skin defines the exact same 43-key color set as the canonical schema
-  4. no unsupported top-level or color keys
+  4. exact top-level structure with no missing, duplicate, or unsupported keys
   5. every color value is a quoted six-digit hex string (#rrggbb)
   6. every skin name appears in README.md and hermes_100_skins_pack.md
   7. every YAML block embedded in the catalog matches its source file byte-for-byte
@@ -25,8 +25,8 @@ README = os.path.join(ROOT, "README.md")
 CATALOG = os.path.join(ROOT, "hermes_100_skins_pack.md")
 EXPECTED_COUNT = 100
 
-ALLOWED_TOP_LEVEL = {"name", "description", "colors", "branding", "tool_prefix"}
-ALLOWED_BRANDING = {"prompt_symbol"}
+EXPECTED_TOP_LEVEL = ("name", "description", "colors", "branding", "tool_prefix")
+EXPECTED_BRANDING = ("prompt_symbol",)
 
 # Canonical 43-key color schema, pinned from the v1 pack (skins/obsidian.yaml).
 EXPECTED_KEYS = (
@@ -88,14 +88,14 @@ def parse_skin(path, errors):
     stem = os.path.basename(path)[:-5]
 
     top_keys = TOP_RE.findall(text)
-    for key in top_keys:
-        if key not in ALLOWED_TOP_LEVEL:
-            errors.append(f"{stem}: unsupported top-level key '{key}'")
+    if tuple(top_keys) != EXPECTED_TOP_LEVEL:
+        errors.append(f"{stem}: top-level structure differs from pack schema "
+                      f"(expected={list(EXPECTED_TOP_LEVEL)} actual={top_keys})")
 
     m = re.search(r"^name: (.+)$", text, re.M)
     if not m:
         errors.append(f"{stem}: missing name")
-        return None, None, text
+        return None, None, text, None
     name = m.group(1).strip()
     if name != stem:
         errors.append(f"{stem}: name '{name}' does not match filename")
@@ -106,9 +106,10 @@ def parse_skin(path, errors):
     description = desc_m.group(1).strip() if desc_m else None
 
     branding_text = text.split("branding:")[-1] if "branding:" in text else ""
-    for key in re.findall(r"^  ([a-z_]+):", branding_text, re.M):
-        if key not in ALLOWED_BRANDING:
-            errors.append(f"{stem}: unsupported branding key '{key}'")
+    branding_keys = tuple(re.findall(r"^  ([a-z_]+):", branding_text, re.M))
+    if branding_keys != EXPECTED_BRANDING:
+        errors.append(f"{stem}: branding structure differs from pack schema "
+                      f"(expected={list(EXPECTED_BRANDING)} actual={list(branding_keys)})")
     if not re.search(r'^  prompt_symbol: ".+"$', text, re.M):
         errors.append(f"{stem}: missing branding.prompt_symbol")
     if not re.search(r'^tool_prefix: ".+"$', text, re.M):
@@ -116,6 +117,10 @@ def parse_skin(path, errors):
 
     colors_text = text.split("branding:")[0]
     pairs = HEX_RE.findall(colors_text)
+    color_keys = [key for key, _ in pairs]
+    if len(color_keys) != len(set(color_keys)):
+        duplicates = sorted({key for key in color_keys if color_keys.count(key) > 1})
+        errors.append(f"{stem}: duplicate color keys {duplicates}")
     colors = dict(pairs)
 
     # any color line that does not match the strict hex shape

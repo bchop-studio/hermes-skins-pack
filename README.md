@@ -71,7 +71,7 @@ Checks the skin count, unique names, the complete 43-key color schema, hex
 format, contrast floors, and that README and catalog stay in sync with the
 files on disk.
 
-Every skin defines the complete current Hermes palette, including syntax colors and `shell_dollar`, so it does not silently inherit the default theme.
+Every skin defines the pack's complete 43-key palette, including syntax colors and `shell_dollar`, so its supported roles do not silently inherit the default theme.
 
 ## License
 
