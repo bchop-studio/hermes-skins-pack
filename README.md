@@ -62,13 +62,13 @@ cp -i skins/*.yaml "$HOME/.hermes/skins/"
 Set the default profile’s skin:
 
 ```bash
-hermes config set display.skin neon-ghost
+hermes -p default config set display.skin neon-ghost
 ```
 
 Start a new Hermes CLI session to see the selected skin:
 
 ```bash
-hermes chat
+hermes -p default chat
 ```
 
 Inside Hermes, you can also run:
@@ -128,7 +128,7 @@ Each profile now has its own physical copy of the 50 YAML files.
 Use the explicit `-p` form in scripts because it does not depend on profile aliases:
 
 ```bash
-hermes config set display.skin midnight-studio
+hermes -p default config set display.skin midnight-studio
 hermes -p culinary config set display.skin warm-parchment
 hermes -p it_guy config set display.skin netrunner
 hermes -p personal config set display.skin aurora-boreal
@@ -370,7 +370,7 @@ Do not add a second `display:` block manually. If one already exists, add or upd
 For the default profile:
 
 ```bash
-skin_name="$(hermes config get display.skin)"
+skin_name="$(hermes -p default config get display.skin)"
 test -f "$HOME/.hermes/skins/$skin_name.yaml" \
   && echo "Found: $skin_name" \
   || echo "Missing: $HOME/.hermes/skins/$skin_name.yaml"
