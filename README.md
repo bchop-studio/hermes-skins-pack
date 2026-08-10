@@ -131,7 +131,7 @@ for profile in "${profiles[@]}"; do
 done
 ```
 
-Each profile now has its own physical copy of the 50 YAML files.
+Each profile now has its own physical copy of the 100 YAML files.
 
 ### Assign Different Skins
 
@@ -595,14 +595,27 @@ Personality controls how the agent communicates. A skin controls how supported H
 
 ---
 
-# Repository Contents
+## Repository Contents
 
-- `skins/` — 50 ready-to-use YAML skin files
+- `skins/` — 100 ready-to-use YAML skin files
 - `README.md` — installation, profile-specific setup, verification, and troubleshooting
 - `VERSION` — current pack version
-- `hermes_50_skins_pack.md` — browsable catalog with every full YAML block
+- `hermes_100_skins_pack.md` — browsable catalog with every full YAML block
+- `scripts/validate_pack.py` — stdlib-only checker for the whole pack
+- `hermes-skins-gallery.html` — interactive local preview of all 100 skins
+- `hermes-skins-contact-sheet.pdf` — printable contact sheet of all 100 skins
 
-Every skin defines a complete palette, including syntax colors and `shell_dollar`, so it does not silently depend on unrelated user customizations.
+## Validate
+
+```bash
+python3 scripts/validate_pack.py
+```
+
+Checks the skin count, unique names, the complete 43-key color schema, hex
+format, contrast floors, and that README and catalog stay in sync with the
+files on disk.
+
+Every skin defines the pack's complete 43-key palette, including syntax colors and `shell_dollar`, so its supported roles do not silently inherit the default theme.
 
 ## License
 
