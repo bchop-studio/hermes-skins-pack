@@ -1,8 +1,8 @@
-# Hermes Skins Pack — 50 Themes
+# Hermes Skins Pack — 100 Themes
 
 ![Cover](hermes-cover.png)
 
-A curated pack of **50 unique, drop-in skin themes** for the [Hermes Agent](https://github.com/NousResearch/hermes-agent) CLI and TUI.
+A curated pack of **100 unique, drop-in skin themes** for the [Hermes Agent](https://github.com/NousResearch/hermes-agent) CLI and TUI. Every skin is a complete YAML file using the real Hermes color keys — no inherited defaults, no silent fallbacks.
 
 Every skin is a complete YAML file using Hermes skin keys. The pack can be installed for the default Hermes profile, for individual named profiles, or shared across all profiles while allowing each profile to use a different skin.
 
@@ -10,16 +10,26 @@ Every skin is a complete YAML file using Hermes skin keys. The pack can be insta
 
 | Category | Skins |
 |---|---|
-| Cyberpunk / Synthwave | `neon-ghost`, `chrome-rain`, `glitch-punk`, `void-sunset`, `netrunner` |
-| Modern Dark / OLED | `obsidian`, `deep-void`, `graphite`, `midnight-studio`, `eclipse` |
-| Earth & Nature | `redwood`, `sandstone`, `deep-ocean`, `moss-stone`, `aurora-boreal` |
-| Retro / Vintage | `amber-terminal`, `green-screen`, `typewriter-cream`, `commodore-64`, `newsprint-noir` |
-| Monochromatic / Minimalist | `bone-white`, `slate-mist`, `warm-ash`, `steel-thread`, `single-malt` |
-| High Contrast | `white-flash`, `solar-flare`, `black-canary`, `red-alert`, `high-noon` |
-| Pastel / Soft | `lavender-dream`, `peach-fuzz`, `seafoam-silk`, `dusty-rose`, `baby-blue` |
-| Light / Paper Modes | `warm-parchment`, `rice-paper`, `blueprint`, `linen-sage`, `alabaster` |
-| Fantasy / Gaming | `dragon-blood`, `arcane-tome`, `shadow-thief`, `enchanted-forest`, `forge-master` |
-| Abstract / Artistic | `vaporwave-mall`, `brutalist-concrete`, `stained-glass`, `desert-neon`, `liquid-silver` |
+| Cyberpunk / Synthwave | neon-ghost, chrome-rain, glitch-punk, void-sunset, netrunner |
+| Modern Dark / OLED | obsidian, deep-void, graphite, midnight-studio, eclipse |
+| Earth & Nature | redwood, sandstone, deep-ocean, moss-stone, aurora-boreal |
+| Retro / Vintage | amber-terminal, green-screen, typewriter-cream, commodore-64, newsprint-noir |
+| Monochromatic / Minimalist | bone-white, slate-mist, warm-ash, steel-thread, single-malt |
+| High Contrast | white-flash, solar-flare, black-canary, red-alert, high-noon |
+| Pastel / Soft | lavender-dream, peach-fuzz, seafoam-silk, dusty-rose, baby-blue |
+| Light / Paper Modes | warm-parchment, rice-paper, blueprint, linen-sage, alabaster |
+| Fantasy / Gaming | dragon-blood, arcane-tome, shadow-thief, enchanted-forest, forge-master |
+| Abstract / Artistic | vaporwave-mall, brutalist-concrete, stained-glass, desert-neon, liquid-silver |
+| Ocean & Coastal | abyssal-plain, tidal-pool, coral-reef, lighthouse-beam, kelp-forest |
+| Desert & Canyon | sahara-dusk, mesa-verde, canyon-shade, cactus-bloom, mirage |
+| Botanical & Garden | fern-hollow, wildflower, bonsai, ivy-wall, sunflower-field |
+| Cosmic & Deep Space | nebula-drift, event-horizon, pulsar, starlight-ash, comet-tail |
+| Industrial & Metal | rust-belt, brushed-steel, copper-patina, carbon-fiber, anodized |
+| Neon Nightlife | ultraviolet, glow-stick, blacklight-poster, neon-koi, laser-lemon |
+| Cozy & Hearth | candlelight, knit-wool, ember-glow, cocoa-nib, hearth-stone |
+| Ink & Editorial | manuscript, fountain-pen, pencil-sketch, sepia-archive, marginalia |
+| Candy & Pop | bubblegum, sorbet, taffy, jellybean, cotton-candy |
+| Experimental & Avant-Garde | datamosh, vapor-trail, phosphor-burn, chromatic-drift, terminal-bloom |
 
 ## How Hermes Profiles Affect Skins
 
