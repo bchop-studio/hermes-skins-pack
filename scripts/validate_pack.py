@@ -23,7 +23,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKINS_DIR = os.path.join(ROOT, "skins")
 README = os.path.join(ROOT, "README.md")
 CATALOG = os.path.join(ROOT, "hermes_100_skins_pack.md")
-EXPECTED_COUNT = 100
+EXPECTED_COUNT = 101
 
 EXPECTED_TOP_LEVEL = ("name", "description", "colors", "branding", "tool_prefix")
 EXPECTED_BRANDING = ("prompt_symbol",)

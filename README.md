@@ -1,8 +1,8 @@
-# Hermes Skins Pack — 100 Themes
+# Hermes Skins Pack — 101 Themes
 
 ![Cover](hermes-cover.png)
 
-A curated pack of **100 unique, drop-in skin themes** for the [Hermes Agent](https://github.com/NousResearch/hermes-agent) CLI and TUI. Every skin is a complete YAML file using the real Hermes color keys — no inherited defaults, no silent fallbacks.
+A curated pack of **101 unique, drop-in skin themes** for the [Hermes Agent](https://github.com/NousResearch/hermes-agent) CLI and TUI. Every skin is a complete YAML file using the real Hermes color keys — no inherited defaults, no silent fallbacks.
 
 Every skin is a complete YAML file using Hermes skin keys. The pack can be installed for the default Hermes profile, for individual named profiles, or shared across all profiles while allowing each profile to use a different skin.
 
@@ -29,6 +29,7 @@ Every skin is a complete YAML file using Hermes skin keys. The pack can be insta
 | Cozy & Hearth | candlelight, knit-wool, ember-glow, cocoa-nib, hearth-stone |
 | Ink & Editorial | manuscript, fountain-pen, pencil-sketch, sepia-archive, marginalia |
 | Candy & Pop | bubblegum, sorbet, taffy, jellybean, cotton-candy |
+| Community Contributed | dracula |
 | Experimental & Avant-Garde | datamosh, vapor-trail, phosphor-burn, chromatic-drift, terminal-bloom |
 
 ## How Hermes Profiles Affect Skins
@@ -131,7 +132,7 @@ for profile in "${profiles[@]}"; do
 done
 ```
 
-Each profile now has its own physical copy of the 100 YAML files.
+Each profile now has its own physical copy of the 101 YAML files.
 
 ### Assign Different Skins
 
@@ -597,13 +598,13 @@ Personality controls how the agent communicates. A skin controls how supported H
 
 ## Repository Contents
 
-- `skins/` — 100 ready-to-use YAML skin files
+- `skins/` — 101 ready-to-use YAML skin files
 - `README.md` — installation, profile-specific setup, verification, and troubleshooting
 - `VERSION` — current pack version
-- `hermes_100_skins_pack.md` — browsable catalog with every full YAML block
+- `hermes_100_skins_pack.md` — browsable catalog with every full YAML block (now covering all 101 skins)
 - `scripts/validate_pack.py` — stdlib-only checker for the whole pack
-- `hermes-skins-gallery.html` — interactive local preview of all 100 skins
-- `hermes-skins-contact-sheet.pdf` — printable contact sheet of all 100 skins
+- `hermes-skins-gallery.html` — interactive local preview of all 101 skins
+- `hermes-skins-contact-sheet.pdf` — printable contact sheet of all 100 skins (pending regeneration for dracula)
 
 ## Validate
 
