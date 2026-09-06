@@ -2,12 +2,12 @@
 """Deterministic validator for the hermes-skins-pack release tree.
 
 Stdlib-only. Verifies:
-  1. exactly 100 YAML files under skins/
+  1. exactly 101 YAML files under skins/
   2. unique filenames and unique top-level `name` values, name == filename stem
   3. every skin defines the exact same 43-key color set as the canonical schema
   4. exact top-level structure with no missing, duplicate, or unsupported keys
   5. every color value is a quoted six-digit hex string (#rrggbb)
-  6. every skin name appears in README.md and hermes_100_skins_pack.md
+  6. every skin name appears in README.md and hermes_101_skins_pack.md
   7. every YAML block embedded in the catalog matches its source file byte-for-byte
   8. readability gates: primary text, label, accent, and semantic colors keep
      minimum contrast against the skin background; status bar text against its bg
@@ -22,7 +22,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKINS_DIR = os.path.join(ROOT, "skins")
 README = os.path.join(ROOT, "README.md")
-CATALOG = os.path.join(ROOT, "hermes_100_skins_pack.md")
+CATALOG = os.path.join(ROOT, "hermes_101_skins_pack.md")
 EXPECTED_COUNT = 101
 
 EXPECTED_TOP_LEVEL = ("name", "description", "colors", "branding", "tool_prefix")
@@ -198,7 +198,7 @@ def main():
     # README and catalog membership
     readme = open(README, encoding="utf-8").read()
     if not os.path.exists(CATALOG):
-        errors.append("catalog hermes_100_skins_pack.md is missing")
+        errors.append("catalog hermes_101_skins_pack.md is missing")
         catalog = ""
     else:
         catalog = open(CATALOG, encoding="utf-8").read()
