@@ -601,7 +601,7 @@ Personality controls how the agent communicates. A skin controls how supported H
 - `skins/` — 101 ready-to-use YAML skin files
 - `README.md` — installation, profile-specific setup, verification, and troubleshooting
 - `VERSION` — current pack version
-- `hermes_100_skins_pack.md` — browsable catalog with every full YAML block (now covering all 101 skins)
+- `hermes_101_skins_pack.md` — browsable catalog with every full YAML block (now covering all 101 skins)
 - `scripts/validate_pack.py` — stdlib-only checker for the whole pack
 - `hermes-skins-gallery.html` — interactive local preview of all 101 skins
 - `hermes-skins-contact-sheet.pdf` — printable contact sheet of all 100 skins (pending regeneration for dracula)

@@ -1,4 +1,4 @@
-# Hermes Skins Pack — 100 Themes
+# Hermes Skins Pack — 101 Themes
 ## How to Install
 
 1. Save any YAML block below as `~/.hermes/skins/<name>.yaml`
