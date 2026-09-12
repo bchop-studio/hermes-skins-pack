@@ -104,6 +104,10 @@ def parse_skin(path, errors):
     if not desc_m:
         errors.append(f"{stem}: missing or too-short description")
     description = desc_m.group(1).strip() if desc_m else None
+    if description and " #" in description and not (
+        description.startswith('"') and description.endswith('"')
+    ):
+        errors.append(f"{stem}: description containing # must be double quoted")
 
     branding_text = text.split("branding:")[-1] if "branding:" in text else ""
     branding_keys = tuple(re.findall(r"^  ([a-z_]+):", branding_text, re.M))
