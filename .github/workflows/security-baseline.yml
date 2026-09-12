@@ -1,0 +1,52 @@
+name: Security Baseline
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+  schedule:
+    - cron: "31 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-baseline-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.14"
+
+      - name: Validate skin pack
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_pack.py
+          python -m unittest discover -s tests -p 'test_*.py' -v
+          python -m py_compile scripts/validate_pack.py tests/test_readme.py
+          git diff --check
+
+      - name: Reject sensitive tracked filenames
+        shell: bash
+        run: |
+          python - <<'PY'
+          import subprocess
+
+          blocked_suffixes = (".env", ".pem", ".key", "id_rsa", "id_ed25519")
+          tracked = subprocess.check_output(["git", "ls-files"], text=True).splitlines()
+          blocked = [path for path in tracked if path.lower().endswith(blocked_suffixes)]
+          if blocked:
+              raise SystemExit("Sensitive tracked filenames: " + ", ".join(blocked))
+          print("sensitive tracked filename check passed")
+          PY
