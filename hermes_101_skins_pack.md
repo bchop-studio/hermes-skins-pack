@@ -5802,7 +5802,7 @@ tool_prefix: "▕"
 
 ```yaml
 name: dracula
-description: The iconic #282a36 Dracula theme — purple-black dusk with neon cyan, pink, green, and gold accents
+description: "The iconic #282a36 Dracula theme — purple-black dusk with neon cyan, pink, green, and gold accents"
 
 colors:
   background: "#282a36"

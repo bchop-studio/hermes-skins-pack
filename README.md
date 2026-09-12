@@ -2,9 +2,9 @@
 
 ![Cover](hermes-cover.png)
 
-A curated pack of **101 unique, drop-in skin themes** for the [Hermes Agent](https://github.com/NousResearch/hermes-agent) CLI and TUI. Every skin is a complete YAML file using the real Hermes color keys — no inherited defaults, no silent fallbacks.
+A curated pack of **101 unique, drop-in skin themes** for the [Hermes Agent](https://github.com/NousResearch/hermes-agent) CLI and TUI. Every skin defines the pack's complete 43-key color palette, plus its own prompt symbol and tool prefix.
 
-Every skin is a complete YAML file using Hermes skin keys. The pack can be installed for the default Hermes profile, for individual named profiles, or shared across all profiles while allowing each profile to use a different skin.
+Hermes supplies its default spinner and the remaining branding text when those optional settings are not present. The pack can be installed for the default Hermes profile, for individual named profiles, or shared across all profiles while allowing each profile to use a different skin.
 
 ## What’s Inside
 
@@ -574,14 +574,15 @@ Ensure `~/.local/bin` is on `PATH` as described earlier.
 
 # What Skins Change
 
-Skins control visual presentation in supported Hermes CLI and TUI surfaces, including items such as:
+The 101 skins in this pack customize:
 
 - Banner and accent colors
 - Prompt and response styling
-- Spinner faces and verbs
-- Branding text
-- Tool-output prefixes
-- Status and completion-menu colors supported by the installed Hermes version
+- Diff and syntax colors
+- Status and completion-menu colors
+- Prompt symbols and tool-output prefixes
+
+Hermes skins can also customize spinner faces, verbs, and more branding text. This pack leaves those optional settings out, so Hermes uses its defaults.
 
 Skins do **not** change:
 
@@ -604,7 +605,7 @@ Personality controls how the agent communicates. A skin controls how supported H
 - `hermes_101_skins_pack.md` — browsable catalog with every full YAML block (now covering all 101 skins)
 - `scripts/validate_pack.py` — stdlib-only checker for the whole pack
 - `hermes-skins-gallery.html` — interactive local preview of all 101 skins
-- `hermes-skins-contact-sheet.pdf` — printable contact sheet of all 100 skins (pending regeneration for dracula)
+- `hermes-skins-contact-sheet.pdf` — printable contact sheet of all 101 skins
 
 ## Validate
 
