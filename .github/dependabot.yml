@@ -4,3 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "10:00"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 1
+    groups:
+      weekly-dependencies:
+        patterns:
+          - "*"
